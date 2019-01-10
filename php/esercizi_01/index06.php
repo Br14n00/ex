@@ -2,12 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>01-05</title>
+        <title>01-06</title>
     </head>
     <body>
         <?php
-        define("MESSAGGIO","CIAO MONDO");
-        echo MESSAGGIO; 
+         $elemento = 13;
+         $elemento +=2;
+         echo $elemento;
          ?>
     </body>
 </html>
