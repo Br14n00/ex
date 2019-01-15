@@ -19,27 +19,27 @@
               }
           } while (!feof($f));
 
-          $regioneScelta = $arrayRegioni[rand(0,count($arrayRegioni)-1)];
+         $regioneScelta = $arrayRegioni[rand(0,count($arrayRegioni)-1)];
 
-          $trattini = array_fill(0,strlen($regioneScelta)-1,"_");
+         $dimRS = strlen($regioneScelta);
+         $trattini = array_fill(0,$dimRS-1,"_");
 
-         $trattini[$i]=$regioneScelta[$i];
+         $trattini[0]=$regioneScelta[0];
          $trattini[-1]=$regioneScelta[-1];
          echo "<p>".implode(" ",$trattini)."</p>";
 
          $arreyControl = array("#");
-         $dim = strlen($regioneScelta);
 
          $fineLettere=0;
          do {
-             $valoreR  = rand(1,$dim-1);
+             $valoreR  = rand(1,$dimRS-1);
             if (!in_array($valoreR,$arreyControl)) {
                 array_push($arreyControl,$valoreR);
                 $trattini[$valoreR-1]=$regioneScelta[$valoreR-1];
                 echo "<p>".implode(" ",$trattini)."</p>";
                 $fineLettere++;
             }
-        } while ($fineLettere <= strlen($regioneScelta)-2);
+        } while ($fineLettere <= $dimRS-2);
 
          ?>
     </body>
